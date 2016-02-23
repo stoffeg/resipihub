@@ -4,13 +4,13 @@ RUN apt-get update \
   && apt-get install -yq \
     usbmount \
     openssh-server \
-    python3-dev \
-    python3-rpi.gpio \
-    python3-picamera \
+    python-dev \
+    python-rpi.gpio \
+    python-picamera \
     curl \
     strace \
     tcpdump \
-    oracle-java8-jdk \
+    openjdk-8-jdk \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd \
