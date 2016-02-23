@@ -5,12 +5,12 @@ RUN apt-get update \
     usbmount \
     openssh-server \
     python-dev \
-    python-rpi.gpio \
-    python-picamera \
+#    python-rpi.gpio \
+#    python-picamera \
     curl \
     strace \
     tcpdump \
-    openjdk-8-jdk \
+#    openjdk-8-jdk \
   && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd \
