@@ -5,13 +5,21 @@ RUN apt-get update \
     usbmount \
     openssh-server \
     python-dev \
-#    python-rpi.gpio \
-#    python-picamera \
+    python-pip \
+    build-essential \
     curl \
     strace \
     tcpdump \
-#    openjdk-8-jdk \
+    openjdk-7-jdk \
   && rm -rf /var/lib/apt/lists/*
+
+RUN pip install RPi.GPIO
+
+WORKDIR /opt/dev
+
+COPY . /opt/dev/
+
+CMD python ./bin/gpio_test.yp > /dev/console
 
 RUN mkdir /var/run/sshd \
     && echo 'root:resin' | chpasswd \
