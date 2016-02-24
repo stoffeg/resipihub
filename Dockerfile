@@ -19,7 +19,7 @@ WORKDIR /opt/dev
 
 COPY . /opt/dev/
 
-CMD python ./bin/gpio_test.yp > /dev/console
+CMD python ./bin/gpio_test.py > /dev/console
 
 RUN mkdir /var/run/sshd \
     && echo 'root:resin' | chpasswd \
