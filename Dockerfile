@@ -30,6 +30,12 @@ COPY . /opt/dev/
 #CMD python ./bin/gpio_test.py > /dev/console
 
 RUN git clone https://github.com/stoffeg/STBWemoServer.git
+RUN cd STBWemoServer
+RUN ./gradlew build
+RUN cd ./build/distributions/
+RUN cp STBWemoServer*.tar /opt/dev/
+RUN cd /opt/dev
+RUN tar xvf STBWemoServer*.tar
 
 CMD ./bin/STBWemoServer
 
