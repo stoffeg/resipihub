@@ -31,7 +31,7 @@ CMD python ./bin/gpio_test.py > /dev/console
 
 CMD git clone https://github.com/stoffeg/STBWemoServer.git
 
-RUN startx
+#RUN startx
 
 #RUN mkdir /var/run/sshd \
 #    && echo 'root:resin' | chpasswd \
