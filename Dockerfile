@@ -1,8 +1,8 @@
 FROM resin/rpi-raspbian:wheezy-20160106
 
 RUN apt-get update \
-  && upgrade \
-  && dist-upgrade \
+#  && upgrade \
+#  && dist-upgrade \
   && apt-get install -yq \
     usbmount \
     openssh-server \
