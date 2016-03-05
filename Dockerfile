@@ -13,8 +13,8 @@ RUN apt-get update \
     strace \
     tcpdump \
     openjdk-7-jdk \
-    raspberrypi-ui-mods \
-    raspberrypi-net-mods \
+#    raspberrypi-ui-mods \
+#    raspberrypi-net-mods \
   && rm -rf /var/lib/apt/lists/*
 
 RUN pip install RPi.GPIO
