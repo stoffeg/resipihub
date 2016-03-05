@@ -6,6 +6,7 @@ RUN apt-get update \
   && apt-get install -yq \
     usbmount \
     openssh-server \
+    git-core \
     python-dev \
     python-pip \
     build-essential \
@@ -20,13 +21,15 @@ RUN apt-get update \
 #    raspberrypi-net-mods \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip install RPi.GPIO
+#RUN pip install RPi.GPIO
 
 WORKDIR /opt/dev
 
 COPY . /opt/dev/
 
 CMD python ./bin/gpio_test.py > /dev/console
+
+CMD git clone https://github.com/stoffeg/STBWemoServer.git
 
 RUN startx
 
