@@ -22,6 +22,8 @@ RUN apt-get update \
     lxde \
     lightdm \
     xinit \
+    xserver-xorg \
+    unzip \
 #    raspberrypi-ui-mods \
 #    raspberrypi-net-mods \
   && rm -rf /var/lib/apt/lists/*
@@ -47,7 +49,7 @@ CMD tail -f /dev/null
 
 #RUN startx
 
-#RUN mkdir /var/run/sshd \
-#    && echo 'root:resin' | chpasswd \
-#    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-#    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
+RUN mkdir /var/run/sshd \
+    && echo 'root:resin' | chpasswd \
+    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
