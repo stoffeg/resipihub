@@ -27,9 +27,11 @@ WORKDIR /opt/dev
 
 COPY . /opt/dev/
 
-CMD python ./bin/gpio_test.py > /dev/console
+#CMD python ./bin/gpio_test.py > /dev/console
 
-CMD git clone https://github.com/stoffeg/STBWemoServer.git
+RUN git clone https://github.com/stoffeg/STBWemoServer.git
+
+CMD ./bin/STBWemoServer
 
 #RUN startx
 
