@@ -1,4 +1,9 @@
-FROM resin/rpi-raspbian:wheezy-20160106
+FROM resin/rpi-raspbian:wheezy
+
+COPY raspberrypi.gpg.key /key/
+RUN echo 'deb http://archive.raspberrypi.org/debian/ wheezy main' >> /etc/apt/sources.list.d/raspi.list && \
+    echo oracle-java8-jdk shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-key add /key/raspberrypi.gpg.key
 
 RUN apt-get update \
 #  && upgrade \
@@ -13,7 +18,7 @@ RUN apt-get update \
     curl \
     strace \
     tcpdump \
-    openjdk-7-jdk \
+    oracle-java8-jdk \
     lxde \
     lightdm \
     xinit \
@@ -29,7 +34,7 @@ COPY . /opt/dev/
 
 #CMD python ./bin/gpio_test.py > /dev/console
 
-RUN git clone https://github.com/stoffeg/STBWemoServer.git
+RUN git clone git://github.com/stoffeg/STBWemoServer.git
 RUN cd STBWemoServer
 #RUN ./gradlew build
 #RUN cd ./build/distributions/
