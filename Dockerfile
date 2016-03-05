@@ -31,13 +31,14 @@ COPY . /opt/dev/
 
 RUN git clone https://github.com/stoffeg/STBWemoServer.git
 RUN cd STBWemoServer
-RUN ./gradlew build
-RUN cd ./build/distributions/
-RUN cp STBWemoServer*.tar /opt/dev/
-RUN cd /opt/dev
-RUN tar xvf STBWemoServer*.tar
+#RUN ./gradlew build
+#RUN cd ./build/distributions/
+#RUN cp STBWemoServer*.tar /opt/dev/
+#RUN cd /opt/dev
+#RUN tar xvf STBWemoServer*.tar
 
-CMD ./bin/STBWemoServer
+#CMD ./bin/STBWemoServer
+CMD tail -f /dev/null
 
 #RUN startx
 
