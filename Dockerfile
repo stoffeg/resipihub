@@ -13,6 +13,9 @@ RUN apt-get update \
     strace \
     tcpdump \
     openjdk-7-jdk \
+    lxde \
+    lightdm \
+    xinit \
 #    raspberrypi-ui-mods \
 #    raspberrypi-net-mods \
   && rm -rf /var/lib/apt/lists/*
