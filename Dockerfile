@@ -40,16 +40,16 @@ RUN git clone git://github.com/stoffeg/STBWemoServer.git
 RUN cd STBWemoServer
 #RUN ./gradlew build
 #RUN cd ./build/distributions/
-#RUN cp STBWemoServer*.tar /opt/dev/
+#RUN cp STBWemoServer-*.tar /opt/dev/
 #RUN cd /opt/dev
-#RUN tar xvf STBWemoServer*.tar
+#RUN tar xvf STBWemoServer-*.tar
 
 #CMD ./bin/STBWemoServer
 CMD tail -f /dev/null
 
 #RUN startx
 
-RUN mkdir /var/run/sshd \
-    && echo 'root:resin' | chpasswd \
-    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
+#RUN mkdir /var/run/sshd \
+#    && echo 'root:resin' | chpasswd \
+#    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+#    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
