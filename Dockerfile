@@ -44,14 +44,14 @@ RUN cd STBWemoServer
 #RUN cd /opt/dev
 #RUN tar xvf STBWemoServer-*.tar
 
+COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
+
 ENV INITSYSTEM on
 
 #CMD ./bin/STBWemoServer
+
+RUN mkdir /var/run/sshd \
+    && echo 'root:resin' | chpasswd \
+    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
 CMD tail -f /dev/null
-
-#RUN startx
-
-#RUN mkdir /var/run/sshd \
-#    && echo 'root:resin' | chpasswd \
-#    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-#    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
