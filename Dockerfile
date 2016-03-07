@@ -44,6 +44,8 @@ RUN cd STBWemoServer
 #RUN cd /opt/dev
 #RUN tar xvf STBWemoServer-*.tar
 
+ENV INITSYSTEM on
+
 #CMD ./bin/STBWemoServer
 CMD tail -f /dev/null
 
