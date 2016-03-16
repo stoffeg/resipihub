@@ -50,8 +50,8 @@ ENV INITSYSTEM on
 
 #CMD ./bin/STBWemoServer
 
-RUN mkdir /var/run/sshd \
-    && echo 'root:resin' | chpasswd \
-    && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
-    && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
+RUN mkdir /var/run/sshd
+RUN echo 'root:resin' | chpasswd
+RUN /usr/sbin/sshd
+
 CMD tail -f /dev/null
