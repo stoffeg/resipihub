@@ -44,9 +44,9 @@ COPY . /opt/dev/
 #RUN cd /opt/dev
 #RUN tar xvf STBWemoServer-*.tar
 
-RUN cd bin
-RUN unzip pilexa-1.0-SNAPSHOT.zip
-Run unzip STBWemoServer-1.0.2.zip
+RUN cd /opt/dev/bin
+#RUN unzip pilexa-1.0-SNAPSHOT.zip
+#Run unzip STBWemoServer-1.0.2.zip
 
 
 #COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
