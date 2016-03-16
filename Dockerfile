@@ -36,15 +36,20 @@ COPY . /opt/dev/
 
 #CMD python ./bin/gpio_test.py > /dev/console
 
-RUN git clone git://github.com/stoffeg/STBWemoServer.git
-RUN cd STBWemoServer
+#RUN git clone git://github.com/stoffeg/STBWemoServer.git
+#RUN cd STBWemoServer
 #RUN ./gradlew build
 #RUN cd ./build/distributions/
 #RUN cp STBWemoServer-*.tar /opt/dev/
 #RUN cd /opt/dev
 #RUN tar xvf STBWemoServer-*.tar
 
-COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
+RUN cd bin
+RUN unzip pilexa-1.0-SNAPSHOT.zip
+Run unzip STBWemoServer-1.0.2.zip
+
+
+#COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
 
 ENV INITSYSTEM on
 
