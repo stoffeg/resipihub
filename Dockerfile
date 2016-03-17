@@ -45,18 +45,17 @@ COPY . /opt/dev/
 #RUN tar xvf STBWemoServer-*.tar
 
 RUN cd /opt/dev/bin
-#RUN unzip pilexa-1.0-SNAPSHOT.zip
+RUN unzip pilexa-1.0-SNAPSHOT.zip
 #Run unzip STBWemoServer-1.0.2.zip
-
 
 #COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
 
 ENV INITSYSTEM on
 
-#CMD ./bin/STBWemoServer
-
 RUN mkdir /var/run/sshd
 RUN echo 'root:resin' | chpasswd
 RUN /usr/sbin/sshd
 
-CMD tail -f /dev/null
+CMD ./pilexa-1.0-SNAPSHOT/bin/pilexa > /dev/console
+#CMD ./bin/STBWemoServer
+#CMD tail -f /dev/null
