@@ -31,6 +31,8 @@ RUN apt-get update \
 
 #RUN pip install RPi.GPIO
 
+RUN echo -e 127.0.0.1 \\t $HOSTNAME.localdomain \\t $HOSTNAME > /etc/hosts
+
 WORKDIR /opt/dev
 
 COPY . /opt/dev/
@@ -55,7 +57,7 @@ ENV INITSYSTEM on
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:resin' | chpasswd
-RUN /usr/sbin/sshd
+ENTRYPOINT /usr/sbin/sshd
 
 CMD ./pilexa-1.0-SNAPSHOT/bin/pilexa > /dev/console
 #CMD ./bin/STBWemoServer
