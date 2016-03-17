@@ -44,7 +44,7 @@ COPY . /opt/dev/
 #RUN cd /opt/dev
 #RUN tar xvf STBWemoServer-*.tar
 
-RUN cd /opt/dev/bin
+WORKDIR /opt/dev/bin
 RUN unzip pilexa-1.0-SNAPSHOT.zip
 #Run unzip STBWemoServer-1.0.2.zip
 
