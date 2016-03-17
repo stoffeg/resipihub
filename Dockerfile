@@ -57,7 +57,7 @@ ENV INITSYSTEM on
 
 RUN mkdir /var/run/sshd
 RUN echo 'root:resin' | chpasswd
-ENTRYPOINT /usr/sbin/sshd
+#ENTRYPOINT /usr/sbin/sshd
 
 CMD ./pilexa-1.0-SNAPSHOT/bin/pilexa > /dev/console
 #CMD ./bin/STBWemoServer
