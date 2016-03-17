@@ -23,6 +23,7 @@ RUN apt-get update \
     lightdm \
     xinit \
     xserver-xorg \
+    vim \
     unzip \
 #    raspberrypi-ui-mods \
 #    raspberrypi-net-mods \
