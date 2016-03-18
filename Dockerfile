@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:jessie
 
 COPY raspberrypi.gpg.key /key/
 RUN echo 'deb http://archive.raspberrypi.org/debian/ wheezy main' >> /etc/apt/sources.list.d/raspi.list && \
@@ -25,6 +25,10 @@ RUN apt-get update \
     xserver-xorg \
     vim \
     unzip \
+    bluez \
+    libjson-glib-1.0-0 \
+    libsoup2.4-1 \
+    mosquitto \
 #    raspberrypi-ui-mods \
 #    raspberrypi-net-mods \
   && rm -rf /var/lib/apt/lists/*
@@ -39,17 +43,9 @@ COPY . /opt/dev/
 
 #CMD python ./bin/gpio_test.py > /dev/console
 
-#RUN git clone git://github.com/stoffeg/STBWemoServer.git
-#RUN cd STBWemoServer
-#RUN ./gradlew build
-#RUN cd ./build/distributions/
-#RUN cp STBWemoServer-*.tar /opt/dev/
-#RUN cd /opt/dev
-#RUN tar xvf STBWemoServer-*.tar
-
 WORKDIR /opt/dev/bin
 RUN unzip pilexa-1.0-SNAPSHOT.zip
-#Run unzip STBWemoServer-1.0.2.zip
+RUN unzip STBWemoServer-1.0.2.zip
 
 #COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
 
