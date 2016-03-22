@@ -67,6 +67,10 @@ RUN mkdir /var/run/sshd \
     && sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
 
+#COPY utils/mosquitto.append /tmp/
+RUN cat ./pilexa-1.0-SNAPSHOT/util/mosquitto.append >> /etc/mosquitto/mosquitto.conf
+#  && rm -f /tmp/myconfig.append
+
 CMD ["bash", "./pilexa-1.0-SNAPSHOT/util/start.sh"]
 #CMD ./pilexa-1.0-SNAPSHOT/util/start.sh
 #CMD ./pilexa-1.0-SNAPSHOT/bin/pilexa > /dev/console
