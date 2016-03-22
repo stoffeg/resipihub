@@ -49,10 +49,10 @@ RUN unzip STBWemoServer-1.0.3.zip
 #//80:E4:DA:71:21:30
 
 #Mosquitto
-RUN dpkg -i libuv1_1.8.0-1_armhf.deb
-RUN dpkg -i libwebsockets7_1.7.3-1_armhf.deb
-RUN dpkg -i libmosquitto1_1.4.8-1_armhf.deb
-RUN dpkg -i mosquitto_1.4.8-1_armhf.deb
+RUN dpkg -i ./pilexa-1.0-SNAPSHOT/util/libuv1_1.8.0-1_armhf.deb
+RUN dpkg -i ./pilexa-1.0-SNAPSHOT/util/libwebsockets7_1.7.3-1_armhf.deb
+RUN dpkg -i ./pilexa-1.0-SNAPSHOT/util/libmosquitto1_1.4.8-1_armhf.deb
+RUN dpkg -i ./pilexa-1.0-SNAPSHOT/util/mosquitto_1.4.8-1_armhf.deb
 
 #COPY tty-input.conf /etc/systemd/system/launch.service.d/tty-input.conf
 
