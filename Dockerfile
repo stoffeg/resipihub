@@ -29,7 +29,7 @@ RUN apt-get update \
     libjson-glib-1.0-0 \
     libsoup2.4-1 \
     libev4 \
-    libc-ares2 \
+    libc-ares2
 #  && rm -rf /var/lib/apt/lists/*
 
 #RUN echo -e 127.0.0.1 \\t $HOSTNAME.localdomain \\t $HOSTNAME > /etc/hosts
