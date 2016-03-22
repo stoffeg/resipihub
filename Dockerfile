@@ -32,7 +32,7 @@ RUN apt-get update \
     libc-ares2 \
 #  && rm -rf /var/lib/apt/lists/*
 
-RUN echo -e 127.0.0.1 \\t $HOSTNAME.localdomain \\t $HOSTNAME > /etc/hosts
+#RUN echo -e 127.0.0.1 \\t $HOSTNAME.localdomain \\t $HOSTNAME > /etc/hosts
 
 WORKDIR /opt/dev
 
