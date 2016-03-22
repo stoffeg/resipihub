@@ -24,6 +24,7 @@ RUN apt-get update \
     xinit \
     xserver-xorg \
     vim \
+    net-tools \
     unzip \
     bluez \
     libjson-glib-1.0-0 \
